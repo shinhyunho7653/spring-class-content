@@ -1,0 +1,41 @@
+package com.yonsai.Day57_20260812_2.controller;
+
+import java.time.LocalDateTime;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+//@RestController
+public class HomeController {
+
+	@GetMapping("/hi")
+	public String hi() {
+		return "안녕하세요 서버입니다";
+	}
+	
+	// 메인 페이지로 접속했을 때 안녕하쇼!! 라고 유저한테 
+	// 메시지를 보내는 기능
+	@GetMapping("/")
+	public String main() {
+	return "안녕하쇼! 서버요!";
+	}
+
+	// 마이페이지 보여줘! 
+	// /mypage 이렇게 접속했을 때 문자로 마이페이지입니다! 보내는기능
+
+	@GetMapping("/mypage")
+	public String mypage() {
+	return "마이페이지입니다!";
+	}
+
+	//현재 실시간으로 시간을 확인 
+	// 나 현재 시간좀 보여주는 페이지 줘!
+
+	@GetMapping("/date")
+	public String date() {
+	return LocalDateTime //현재 실시간으로 시간을 가져오는 라이브러리
+	.now() // 현재 시간가져와!
+	.toString(); // date타입을 문자로 변경해서 화면 에띄운다.
+	}
+	
+}
