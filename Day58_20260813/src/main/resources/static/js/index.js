@@ -1,5 +1,4 @@
 /**
- * 
+ * 파일명: index.js
  */
-
-console.log("연결");
+console.log("연결OK!");
